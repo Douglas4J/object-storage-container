@@ -1,0 +1,10 @@
+services:
+  garage:
+    image: dxflrs/garage:v2.2.0 # Imagem Docker do Garage
+    container_name: garage
+    ports:
+      - "3900:3900" # Porta da API S3 (onde a aplicacao vai conectar)
+      - "3901:3901" # Porta RPC (comunicacao interna entre nodes do Garage)
+    volumes:
+      - ./garage-data:/var/lib/garage # Persistencia dos dados (arquivos e metadados)
+      - ./garage-config/garage.toml:/etc/garage.toml # Arquivo de configuracao do Garage

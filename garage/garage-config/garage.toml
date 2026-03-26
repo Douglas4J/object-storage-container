@@ -1,0 +1,31 @@
+# Diretorio onde ficam os metadados (banco interno do Garage)
+metadata_dir = "/var/lib/garage/meta"
+
+# Diretorio onde ficam os arquivos armazenados (objetos S3)
+data_dir = "/var/lib/garage/data"
+
+# Endereço onde o RPC escuta (comunicacaoo entre nodes)
+rpc_bind_addr = "0.0.0.0:3901"
+
+# Endereço público do node (usado para clusterizacao)
+# Em ambiente local, localhost funciona
+rpc_public_addr = "127.0.0.1:3901"
+
+# Chave secreta usada para autenticacaoo entre nodes (cluster)
+# Deve ter 32 bytes em HEX (64 caracteres)
+rpc_secret = "1fdb2db1d5eb4a42b211cfcd3737abb032b691ca12344c2b9fc69d2c91e11f5a"
+
+# Quantas copias dos dados serao mantidas
+# 1 = sem redundancia (ideal para dev/local)
+replication_factor = 1
+
+# Define consistencia dos dados
+# "consistent" = forte consistencia (mais seguro, menos performatico)
+consistency_mode = "consistent"
+
+[s3_api]
+# Porta onde a API S3 vai ficar disponivel
+api_bind_addr = "0.0.0.0:3900"
+
+# Regiao S3 (pode ser qualquer string, ex: "us-east-1")
+s3_region = "garage"
