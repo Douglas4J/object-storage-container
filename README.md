@@ -138,3 +138,19 @@ aws.s3.secret-key=<SECRET_KEY>
 aws.s3.bucket=arquivos-bucket
 aws.s3.region=us-east-1
 ```
+
+### Pegar Credenciais
+Access Key: aws.s3.access-key=GKd2c5851a1c3b4341e0718284
+```
+docker exec -it garage /garage key list
+```
+
+Secret Key: aws.s3.secret-key=135ed952e0fa...
+```
+docker exec -it garage /garage key create
+```
+
+Bucket: aws.s3.bucket=arquivos-bucket
+```
+docker exec -it garage /garage bucket create arquivos-bucket
+```
