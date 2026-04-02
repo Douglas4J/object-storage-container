@@ -118,6 +118,11 @@ docker exec -it garage /garage bucket allow arquivos-bucket --key <KEY_ID>
 docker exec -it garage /garage bucket info arquivos-bucket
 ```
 
+## 6. Permissão
+```
+docker exec -it garage /garage bucket allow arquivos-bucket --key GKd2c5851a1c3b4341e0718284 --read --write --owner
+```
+
 ------------------------------------------------------------------------
 
 ## 🧠 Modelo
