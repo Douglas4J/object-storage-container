@@ -99,7 +99,7 @@ docker exec -it garage /garage key allow <KEY_ID>
 ## 🪣 3. Criar Bucket
 
 ``` bash
-docker exec -it garage /garage bucket create arquivos-bucket
+docker exec -it garage /garage bucket create <NOME_BUCKET>
 ```
 
 ------------------------------------------------------------------------
@@ -107,7 +107,7 @@ docker exec -it garage /garage bucket create arquivos-bucket
 ## 🔗 4. Associar key ao bucket
 
 ``` bash
-docker exec -it garage /garage bucket allow arquivos-bucket --key <KEY_ID>
+docker exec -it garage /garage bucket allow <NOME_BUCKET> --key <KEY_ID>
 ```
 
 ------------------------------------------------------------------------
@@ -115,12 +115,12 @@ docker exec -it garage /garage bucket allow arquivos-bucket --key <KEY_ID>
 ## ✅ 5. Validar configuração
 
 ``` bash
-docker exec -it garage /garage bucket info arquivos-bucket
+docker exec -it garage /garage bucket info <NOME_BUCKET>
 ```
 
 ## 6. Permissão
 ```
-docker exec -it garage /garage bucket allow arquivos-bucket --key GKd2c5851a1c3b4341e0718284 --read --write --owner
+docker exec -it garage /garage bucket allow <NOME_BUCKET> --key <KEY_ID> --read --write --owner
 ```
 
 ------------------------------------------------------------------------
@@ -144,18 +144,28 @@ aws.s3.bucket=arquivos-bucket
 aws.s3.region=us-east-1
 ```
 
-### Pegar Credenciais
-Access Key: aws.s3.access-key=GKd2c5851a1c3b4341e0718284
+### Informações
+Key Criadas
 ```
 docker exec -it garage /garage key list
 ```
 
-Secret Key: aws.s3.secret-key=135ed952e0fa...
+Bucket Específico 
 ```
-docker exec -it garage /garage key create
+docker exec -it garage /garage bucket info <NOME_BUCKET>
 ```
 
-Bucket: aws.s3.bucket=arquivos-bucket
+Bucket Criados 
 ```
-docker exec -it garage /garage bucket create arquivos-bucket
+docker exec -it garage /garage bucket list
+```
+
+Status Geral do Cluster
+```
+docker exec -it garage /garage status
+```
+
+Ver Layout do Cluester
+```
+docker exec -it garage /garage layout show
 ```
