@@ -150,6 +150,11 @@ Key Criadas
 docker exec -it garage /garage key list
 ```
 
+Deletar Key
+```
+docker exec -it garage /garage key delete <KEY_ID> --yes
+```
+
 Bucket Específico 
 ```
 docker exec -it garage /garage bucket info <NOME_BUCKET>
